@@ -1,0 +1,39 @@
+<!-- START -->
+{% extends "base.html" %} {% block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h2>Malaria Diagnosis with Deep Learning!</h2>
+    </div>
+    <div class="card-body">
+        <div>
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class="upload-label">
+                    Upload Blood Smear Image
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            </form>
+
+            <div class="image-section">
+                <div class="img-preview">
+                    <div id="imagePreview">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+                </div>
+            </div>
+
+            <div class="loader" style="display:none;"></div>
+
+            <h3 class="result-heading">
+                Result: <span id="result"></span>
+            </h3>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+<!-- END -->
