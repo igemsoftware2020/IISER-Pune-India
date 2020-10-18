@@ -7,7 +7,6 @@ date : Oct 18 2020
 
 organization : IISER Puen India
 
-Google Colab link : https://colab.research.google.com/drive/1-voXdwHeQ8rp5lLP5TePj1fhI7qio4Ms
 """
 
 ### CLEANING THE DATA .CSV file
