@@ -158,13 +158,9 @@ def def plot_third_swarmplot(df):
 
 	sns.set_style("whitegrid")
 	sns.despine()
-	sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== '1'], palette='gnuplot',alpha=0.8, ax=axes[0])
-	sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== '2'], palette='gnuplot',alpha=0.8, ax=axes[1])
-	sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== '3'], palette='gnuplot',alpha=0.8, ax=axes[2])
-	sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== '4'], palette='gnuplot',alpha=0.8, ax=axes[3])
-	sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== '5'], palette='gnuplot',alpha=0.8, ax=axes[4])
+        for i in range(5):
+            sns.swarmplot(x='mresidue_no',y='Interaction Energy', data = df_mut[df_mut['inhibitor_type']== str('i+1')], palette='gnuplot',alpha=0.8, ax=axes[i])
 
-	for i in range(5):
 	    axes[i].legend(bbox_to_anchor=(1.05, 1), loc=5,fancybox=True, framealpha=1, shadow=True, borderpad=1)
 	    axes[i].legend_.set_title('Model'+str(i+1))
 	    axes[i].set_xlabel('Residue number')
