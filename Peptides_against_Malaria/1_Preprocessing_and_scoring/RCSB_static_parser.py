@@ -36,7 +36,7 @@ def get_pdb_details(pdb_id):
 
     ### COLLECTING DATA FOR ONE PDB ID
     
-    PDB_ID.append(pdb_id[i])
+    PDB_ID.append(pdb_id)
 
     try:
         desc = primary_data.h4.text
@@ -127,7 +127,7 @@ def get_pdb_details(pdb_id):
     return pdb_details # returns a list containing all required values
 
 
-def main(csv_path):
+def main(csv_path, col_names):
     pdb_ids_list = read_pdb_ids_csv(csv_path)        
     m = len(pdb_id)   ### length of pdb_id list ie no of pdb_ids
     
@@ -135,12 +135,13 @@ def main(csv_path):
     for i in range(m):
         dataframe.append(get_pdb_details(pdb_ids_list[i]))
 
-    dataframe = pd.DataFrame(dataframe, columns=['PDB_ID', ' Desc' , ' Classification', ' Exp_system' , ' Mut' , ' Method' , ' Res', ' Mmol', ' Org1',' Org2', ' Lit', ' Pubmed_id', ' Pubmed_abs']
+    dataframe = pd.DataFrame(dataframe, columns=col_names)
 
     return dataframe
 
+column_namaes = ['PDB_ID', ' Desc' , ' Classification', ' Exp_system' , ' Mut' , ' Method' , ' Res', ' Mmol', ' Org1',' Org2', ' Lit', ' Pubmed_id', ' Pubmed_abs']
 
-dataframe = main(csv_path) 
+dataframe = main(csv_path,column_namaes) 
 dataframe.to_csv('./rscb_data_cleaned.csv')  ### write output to a csv file
 
-### The object dataframe can then be converted to other data types (json, pkl) and used for further analysis.
+### The object 'dataframe' can then be converted to other data types (json, pkl) and used for further analysis.
