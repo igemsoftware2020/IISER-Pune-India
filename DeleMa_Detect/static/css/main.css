@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+* {
+    font-family: "Titillium Web"!important;
+}
+
 .navbar {
     background-color: #333333;
 }
@@ -76,9 +82,59 @@ h3 span {
     color: var(--success);
 }
 
+.result-heading {
+    font-size: 5vmin;
+}
+
 .infected {
     color: #cc3333;
 }
+
+.about {
+    width: 70%;
+    padding-bottom: 4rem;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+/* Jatin's CSS for Links */
+
+.about a {
+    margin: auto;
+    text-decoration: none;
+    color: #371D31;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    z-index: 0;
+    white-space: nowrap;
+}
+
+.about a:after {
+    content: '';
+   
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 0rem;
+    left: 0rem;
+    background-color: #D3251B;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    transform-origin: bottom center;
+    z-index: -1;
+}
+
+.about a:hover {
+    color: #fff;
+}
+
+.about a:hover:after {
+    right: 0;
+    left: 0;
+    height: 100%;
+}
+
 
 /* Footer */
 
@@ -96,4 +152,58 @@ footer div.jumbotron {
 .social-media svg {
     width: 1.5rem;
     margin: 10px;
+}
+
+
+.github {
+    padding-bottom: 0;
+    margin-bottom: 0.2em;
+}
+
+.github-icon {
+    width: 1em !important;
+}
+
+.github a {
+    fill: #007BFF;
+}
+
+.github a:hover {
+    color: #cc3333;
+    fill: #cc3333;
+}
+
+.img-fluid:hover {
+    cursor: pointer;
+
+}
+
+
+.social-media a:nth-child(1) {
+    fill: #3b5998;
+
+}
+
+.social-media a:nth-child(2) {
+    fill: #00acee;
+
+}
+
+.social-media a:nth-child(3) {
+    fill: #000;
+
+}
+
+.social-media a:nth-child(4) {
+    fill: #ff0000;
+
+}
+
+.social-media a svg, .social-media a img {
+    transition: 0.2s;
+}
+
+.social-media a svg:hover, .social-media a img:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
 }

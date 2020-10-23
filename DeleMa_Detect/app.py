@@ -58,10 +58,11 @@ def upload():
         prediction = model_predict(file_path, MODEL_PATH)
 
         # Process your result for human
+        # Preserve the 0- and 1- prefixes
         if prediction <= probability:
-            result = f"The Image looks Malaria Infected <br> The probability that the blood smear is NOT Infected is {prediction:.3} "
+            result = f"1-The Image looks Parasitized.\nThe probability that the blood smear is uninfected is {prediction:.3} "
         else:
-            result=f"The Image does not look NOT Infected \n The probability that the blood smear is NOT Infected is {prediction:.3} "
+            result=f"0-The Image looks Uninfected.\nThe probability that the blood smear is uninfected is {prediction:.3} "
         
         return result
     return None
