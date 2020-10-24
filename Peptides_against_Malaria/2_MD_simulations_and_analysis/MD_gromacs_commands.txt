@@ -1,0 +1,68 @@
+Creating a topoloy file
+*************************************
+gmx_mpi_d pdb2gmx -f model.pdb -o model_processed.gro -water spce
+
+"Chose option  6: AMBER99SB-ILDN protein, nucleic AMBER94 (Lindorff-Larsen et al., Proteins 78, 1950-58, 2010) to make a topology using the AMBER99SB force field."
+
+solvating
+************************************
+gmx_mpi_d editconf -f model_processed.gro -o model_newbox.gro -c -d 1.0 -bt cubic
+gmx_mpi_d solvate -cp model_newbox.gro -cs spc216.gro -o model_solv.gro -p topol.top
+
+"These commands create a cubic box of water molecules using the SPC/E model with the protein at the centre with at least 1.0 nm from the end."
+
+Adding ions
+*******************************
+gmx_mpi_d grompp -f ions.mdp -c model_solv.gro -p topol.top -o ions.tpr
+gmx_mpi_d genion -s ions.tpr -o model_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+"This command is used to neutralise the net charge on the system by adding approitae mount of Sodium and Chloride ions by replacing the solvent molecules. Option 13 was used to embed
+ions in the solvent"
+
+
+energy minimisation
+*******************************
+gmx_mpi_d grompp -f minim.mdp -c model_solv_ions.gro -p topol.top -o em.tpr
+gmx_mpi_d mdrun -v -deffnm em
+"These commands we do a process called energy minimisation to ensure that our system does't contain any steric clashes or in appropiate geometry"
+gmx_mpi_d energy -f em.edr -o potential.xvg
+"This is used to plot the potential energy over the energy minimisatoin steps"
+
+nvt run
+***********************
+"These are used to equilibriate the NVT ensemble"
+gmx_mpi_d grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+mpirun -np 240 gmx_mpi_d mdrun -v -deffnm nvt
+gmx_mpi_d energy -f nvt.edr -o temperature.xvg
+"This is used to plot the temperature over the equilibriating steps; chosse temperature when it prompts"
+
+
+npt run
+****************************************
+"These are used to equilibriate the NPT ensemble"
+gmx_mpi_d grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+mpirun -np 240 gmx_mpi_d mdrun -v -deffnm npt
+"The above command was given using a batch script"
+gmx_mpi_d energy -f npt.edr -o pressure.xvg
+"This is used to plot the pressure over the equilibriating steps; chosse pressure when it prompts"
+
+Production run
+****************************
+
+gmx_mpi_d grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_1.tprgmx_mpi_d mdrun -deffnm md_0_1
+mpirun -np 240 gmx_mpi_d mdrun -v -deffnm md_0_1
+"The above command was given using a batch script"
+
+Post MD run 
+******************************
+
+gmx_mpi_d trjconv -s md_0_1.tpr -f md_0_1.xtc -o md_0_1_nojump.xtc -pbc nojump
+"This is to make a trajectory by correcting for periodicity. We had chosen system for our output."
+
+gmx_mpi_d rms -s md_0_1.tpr -f md_0_1_nojump.xtc -o rmsd_nojump.xvg -tu ns
+"This is used to make the rmsd plots using the corrected trajectory file."
+
+gmx_mpi_d trjconv -f md_0_1.xtc -s md_0_1.tpr -o traj_for_video_no_jump.xtc -pbc nojump -dt 500 
+'This is used to make a trajectory file by taking only every 500th frame staribg from frmae 0 to make the video sing PyMol"
+
+gmx_mpi_d trjconv -s md_0_1.tpr -f md_0_1.xtc -dt 500 -o ./pdb_snaps_nojump/trj_nojump.pdb -pbc nojump -sep
+"This is used to make snapshots of the trajectory file in PDB format at every 500th frame for analysing the centroid distance and intermolecular hydrogen bonds."
