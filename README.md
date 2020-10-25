@@ -47,7 +47,7 @@ DeleMa Detect is our Artificial Intelligence based **end-to-end Deep Learning so
 
 Further documentation and tutorials on how to use it is under ``` ./DeLeMa_Detect ```. Detailed documentation on how the deep learning model build by a **Transfer Learning** algorithm using the **Mobilenet_v2 architecture** [3,4] is available on the [Software section](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki. 
 
-A miniature version of our Web application is already hosted on Heroku (a cloud based platform as a service) at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Some blood smear images for trail can be found on the [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki.
+A miniature version of our Web application is already hosted on Heroku (a cloud based platform as a service) at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Some blood smear images for trial can be found on the [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki.
 
 ### References : 
 
