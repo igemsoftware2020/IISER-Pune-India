@@ -1,3 +1,8 @@
+# Overview
+
+![](./dry_lab_overview.png)
+
+
 # Analysis of Molecular Dynamics simulations
 
 To analyse the MD simulaions of a Protein and its peptide inhibitor, we wanted to understand two particular aspects in greater detail: 
@@ -14,6 +19,7 @@ To perform these calculations, I wrote the script PDB_centroid_analyser.
   
 Regex Railroad diagram : 
 
+![Regex Diagram](./2_MD_simulations_and_analysis/regex.svg)
 
 Here : 
  - Atom no -->  group(1)
