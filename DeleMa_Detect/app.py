@@ -24,10 +24,11 @@ app = Flask(__name__)
 MODEL_PATH='./model/VGG_94.52_11102020_8 49.h5'
 model = load_model(MODEL_PATH)
 probability = 0.3
+target_size = (100,100)
 
 def model_predict(img_path,model_path):
 	
-    img = image.load_img(img_path,target_size=(100,100))
+    img = image.load_img(img_path,target_size=(target_size))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array,axis=0) # changes input shape to a tensor (1,160,160,3)
     #img_array = preprocess_input(img_array) # preprocess input based on mobilenet_v2 conventions
