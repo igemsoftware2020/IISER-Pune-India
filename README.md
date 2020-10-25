@@ -7,7 +7,11 @@
 
 ## Project Description
 
-In January 2020, The World Health Organization estimated that 228 million people contracted Malaria globally, 405,000 people died from it in 2018 and accepted evidence for growing drug resistance against *Plasmodium falciparum* Malaria, especially in South-East Asia. Our project aims to develop a library of inhibitory peptide (known for their high specificity and longer duration against drug resistance) drugs against essential Human-Parasite protein interactions. We intend to use **Cyclotides** (a type of stable plant proteins) as a protein scaffold for the delivery of these peptides. Using Insilico modeling and simulations, our dry lab team has designed short peptides that will potentially inhibit the protein interactions crucial for the invasion and survival of malaria parasites inside a human host. Our wet lab team has designed various experiments to clone and express the interacting host and parasite proteins, characterize the drug and reduce the toxicity of the grafted cyclotides. To address issues related to poor diagnostics, we have developed a **Diagnostic tool** using *convolutional neural networks* and advanced deep learning algorithms to identify patients with malaria based on images of their blood smears.
+In January 2020, The World Health Organization estimated that 228 million people contracted Malaria globally, 405,000 people died from it in 2018 and accepted evidence for growing drug resistance against *Plasmodium falciparum* Malaria, especially in South-East Asia.[1] Our project aims to develop a library of inhibitory peptide (known for their high specificity and longer duration against drug resistance) drugs against essential Human-Parasite protein interactions. We intend to use **Cyclotides** (a type of stable plant proteins) as a protein scaffold for the delivery of these peptides. 
+
+- Using Insilico modeling and simulations, our dry lab team has designed short peptides that will potentially inhibit the protein interactions crucial for the invasion and survival of malaria parasites inside a human host.
+- Our wet lab team has designed various experiments to clone and express the interacting host and parasite proteins, characterize the drug and reduce the toxicity of the grafted cyclotide.
+- To address issues related to poor diagnostics, we have developed a **Diagnostic tool** using **convolutional neural networks** and advanced deep learning algorithms to identify patients with malaria based on images of their blood smears.
 
 All scripts, programs and description of software built and used for file processing, analysis, Molecular Dynamics simulation and Deep Learning algorithms  can be found on this repository. 
 
@@ -15,7 +19,7 @@ All scripts, programs and description of software built and used for file proces
 
 #### Overview 
 
-We designed peptide inhibitors against essential *falciparum* membrane proteins and Human endothelial cell surface receptors using a Structural Biology and Bioinformatics approach. Detailed information on the workflow and questions answered can be found on our [modeling page](https://2020.igem.org/Team:IISER-Pune-India/Overview). All files corresponding to this module of our project will be present in the ``` ./Peptides_against_Malaria``` directory. In brief, the workflow involved : 
+We designed peptide inhibitors against essential *falciparum* membrane proteins and Human endothelial cell surface receptors using a Structural Biology and Bioinformatics approach. Detailed information on the workflow and questions answered can be found on our [modeling page](https://2020.igem.org/Team:IISER-Pune-India/Overview). All files corresponding to this module of our project will be present in the ``` ./Peptides_against_Malaria``` directory and this assumed to be the root directory for this section. In brief, the workflow involved : 
 
 1. Literature Search and Mining the PDB database 
 
@@ -39,10 +43,11 @@ We grafted our Peptide Inhibitor in loop 6 of Cycotide kalata B1. Th insilico mo
 
 ### DEep LEarning for MAlaria Detection
 
-    DeleMa Detect is our Artificial Intelligence based **end-to-end Deep Learning software** for the diagnosis of Malaria through blood smear images. Our envisioned end-to-end diagnostics system consists of a Foldscope, an easy-to-assemble and very cheap optical microscope, a paper centrifuge that will help in creating the blood smear and this Web application that uses Python backend to classify blood smear images taken from any phone as infected or not. Our computational team has developed the deep learning software with an accuracy of ~96%. Our goal is to present a web application, that is fast on boot-time and processing without compromising on accuracy, so that it could be used on all kinds of mobile phones and in regions with poor internet connectivity as well.
+DeleMa Detect is our Artificial Intelligence based **end-to-end Deep Learning software** for the diagnosis of Malaria through blood smear images. Our envisioned end-to-end diagnostics system consists of a Foldscope, an easy-to-assemble and very cheap optical microscope, a paper centrifuge that will help in creating the blood smear and this Web application that uses Python backend to classify blood smear images taken from any phone as infected or not. Our computational team has developed the deep learning software with an accuracy of ~96%. Our goal is to present a web application, that is fast on boot-time and processing without compromising on accuracy, so that it could be used on all kinds of mobile phones and in regions with poor internet connectivity as well.
 
-    Further documentation on how to use it is under ``` ./DeLeMa_Detect ```. Detailed documentation on how the deep learning model build by a **Transfer Learning** algorithm using the **Mobilenet_v2 architecture** [3,4] is available on the [Software section](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki. 
+Further documentation and tutorials on how to use it is under ``` ./DeLeMa_Detect ```. Detailed documentation on how the deep learning model build by a **Transfer Learning** algorithm using the **Mobilenet_v2 architecture** [3,4] is available on the [Software section](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki. 
 
+A miniature version of our Web application is already hosted on Heroku (a cloud based platform as a service) at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Some blood smear images for trail can be found on the [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) of our wiki.
 
 ### References : 
 
