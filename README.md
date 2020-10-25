@@ -2,7 +2,7 @@
 
 # Anopheles | The Half-Blood Princess
 
-![](./DeleMa_Detect/static/favicon/android-chrome-512x512.png)
+![Project Logo](./DeleMa_Detect/static/favicon/android-chrome-512x512.png)
 
 
 ## Project Description
@@ -19,11 +19,11 @@ All scripts, programs and description of software built and used for file proces
 
 #### Overview 
 
-We designed peptide inhibitors against essential *falciparum* membrane proteins and Human endothelial cell surface receptors using a Structural Biology and Bioinformatics approach. Detailed information on the workflow and questions answered can be found on our [modeling page](https://2020.igem.org/Team:IISER-Pune-India/Overview). All files corresponding to this module of our project will be present in the ``` ./Peptides_against_Malaria``` directory and this assumed to be the root directory for this section. In brief, the workflow involved : 
+We designed peptide inhibitors against essential *falciparum* membrane proteins and Human endothelial cell surface receptors using a Structural Biology and Bioinformatics approach. Detailed information on the workflow and questions answered can be found on our [modeling page](https://2020.igem.org/Team:IISER-Pune-India/Model). All files corresponding to this module of our project will be present in the ``` ./Peptides_against_Malaria``` directory and is assumed to be the root directory for the documentation in this section. In brief, the workflow involved : 
 
 1. Literature Search and Mining the PDB database 
 
-  We wrote ``` RCSB_static_parser.py  ```, a web parser written in Python that statically mines the PDB database and returns all the required information in the form of a compact .csv file (or as preferred by the user). Although better commercial software are available, our web-parser is efficient, easy to handle and the output is most suitable for further analysis. We believe that this will greatly help future teams deal with the data deluge in biology and in particularly the RCSB Database. 
+  We wrote ```RCSB_static_parser.py```, a web parser written in Python that statically mines the PDB database and returns all the required information in the form of a compact .csv file (or as preferred by the user). Although better commercial software are available, our web-parser is efficient, easy to handle and the output is most suitable for further analysis. We believe that this will greatly help future teams deal with the data deluge in biology and in particularly the RCSB Database.
   
 2. PDB file Preprocessing and scoring
 
