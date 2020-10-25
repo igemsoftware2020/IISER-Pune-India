@@ -11,7 +11,7 @@ DeleMa Detect is a Web application built on a lightweight python backend that is
 
 The main python script that uses the FLASK micro web framework to create a local host where the model is deployed. It contains auxiliary functions ```model_predict()```, ```index()``` and ```upload()```
 
-1. ```model_predict`` calls the model.h5 file stored in ```./model```. We can created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded and needs to placed in ```./model``` 
+1. ```model_predict``` calls the model.h5 file stored in ```./model```. We can created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded and needs to placed in ```./model``` 
 
 Although, the dimensions of the image uploaded can be anything, each model takes a particular input image size, namely : 
 | Sr no | Model | ```target_size``` | 
@@ -51,7 +51,7 @@ to train the model. We have also uploaded the performance metrics and plots here
 
 This file is used for deploying as a web application on Heroku. We call the ``app`` method of the ```gunicorn``` module for deploying. 
 
-### '''requirements.txt```
+### ```requirements.txt```
 
 This file contains all the required python (>3.2) modules required for locally running DeleMa-detect. 
 
