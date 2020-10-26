@@ -59,7 +59,7 @@ This file contains all the required python (>3.2) modules required for locally r
 
 Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the video on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) otherwise !
 
-![Homepage](./Deployed-model-screenshots/desktop-page.png)
+![Homepage](./Deployed-model-screenshots/desktop-page.png =100x20)
 
 
 ![Upload an Image and Click Predict](./Deployed-model-screenshots/desktop-page-predict.png)
