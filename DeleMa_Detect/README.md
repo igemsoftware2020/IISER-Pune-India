@@ -123,15 +123,25 @@ The result for an Image that has been Identified as Uninfected
 
 ## How to run DeLeMa Detect locally ? 
 
-1. Download this Github repository using ```git clone https://github.com/igemsoftware2020/IISER-Pune-India```
+1. Clone this Github repository using 
+```git clone https://github.com/igemsoftware2020/IISER-Pune-India```
 
-2. Create a Python (>=3.2) virtual environemnt. 
+2. Create a Python (>=3.2) virtual environemnt and call it 'delema_detect'.
 
-3. In the new virtual environemnt , run ```pip3 install -r requirements.txt```
+```python3 -m venv delema_detect```
 
-4. Download a desired model form the [Google Drive link](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing) provided and store it in ```./model```. Based on the model, setup the variable ```target_size``` in ```app.py```
+- A new directory called `delema_detect` will be created. 
+- Activate the Virtual Environment by running the following : 
+
+```source delema_detect/bin/activate```
+
+3. In the new virtual environemnt , run ```pip3 install -r requirements.txt``` to install all dependencies
+
+4. Download a desired model (VGG16 , Mobilenet_V2 etc) form the [Google Drive link](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing) provided and store it in ```./model```. Based on the model, setup the variable ```target_size``` in ```app.py```
 
 5. Run ```python3 app.py``` in the command line and the web app must be running on localhost:5000 by default. Any errors or bugs will show up on executing app.py
+
+(We have found that this tutorial works without any bugs for Mac and Linux but we found few bugs while running the same on windows. We suggest you watch [this tutorial video](https://www.youtube.com/watch?v=APOPm01BVrk) on creating a virtual environment in Windows.)
 
 We have also uploaded a sample video of us running the code on our Github Repository. It is available at ```./Deployed-model-screenshots/delema-demo.mp4```. Tutorial video for the mobile version is also available at ```./Deployed-model-screenshots/delema-demo-mobile.mp4```
 
