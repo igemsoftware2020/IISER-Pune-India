@@ -1,6 +1,7 @@
 # DeLeMa Detect Documentation
 
 DeleMa Detect is a Web application built on a lightweight python backend that is able to classify *Plasmodium falciparum* infected blood smear images. The classification has be documented to be about ~ 96% accurate with a 0.96  F1 score . Results for a blood smear image can be obtained within seconds whereas a traditional approach of testing in laboratory with the requirement of technicians would require atleast a day for accurate results. To classify each image, a Deep Learning convolutional neural network  based Mobilenet_v2 architecture was trained on a set of 27,558 images using open-source software Python, Tensorflow and Keras. The final Web app has been deployed on [Heroku](https://delema-detect-igem-iiserpune.herokuapp.com/) for testing and viewing. This repository contains all the files used to build, test and deploy the model. 
+You can find more information on how the software was built on our [Software](https://2020.igem.org/Team:IISER-Pune-India/Software) page. 
 
 ## Overview 
 
@@ -59,7 +60,7 @@ This file contains all the required python (>3.2) modules required for locally r
 
 ## Use the Web App ! 
 
-Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the tutorial video and get some testing blood smear images on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) ! 
+Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the tutorial video and get some testing blood smear images on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software)! 
 
  <figure>
   <img src=./Deployed-model-screenshots/desktop-page.png alt="Upload" width=500>
