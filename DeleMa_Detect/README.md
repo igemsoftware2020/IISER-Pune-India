@@ -78,13 +78,13 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
-  <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image</figcaption>
+  <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image </figcaption>
 </figure>
 
 
 
 <figure>
-  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=500>
+  <img src=./Deployed-model-screenshots/desktop-page-result-infected.png alt="Infected" width=500>
   <figcaption>Fig.5 - Results for a Parasitized ir infected Blood Smear Image</figcaption>
 </figure>
 
@@ -92,8 +92,8 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
 
 
 <figure>
-  <img src=/Deployed-model-screenshots/mobile-page-predict.png alt="Infected" width=120>
-  <figcaption>Fig.6 - Upload</figcaption>
+  <img src=./Deployed-model-screenshots/mobile-page-predict.png alt="Infected" width=120>
+  <figcaption>Fig.6 - Upload </figcaption>
 </figure>
 
 <figure>
