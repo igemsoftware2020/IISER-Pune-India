@@ -16,7 +16,7 @@ The main python script that uses the FLASK micro web framework to create a local
 
 1. ```model_predict``` calls the model.h5 file stored in ```./model```. We can created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded and needs to placed in ```./model``` 
 
-Although, the dimensions of the image uploaded can be anything, each model takes a particular input image size, namely : 
+Although, the dimensions of the uploaded image can be anything, each model takes a particular input image size which is controlled and preprocessed in ```app.py```, namely : 
 | Sr no | Model | ```target_size``` | 
 | ----- | ----- | ----------------- | 
 | 1 | MobileNet_v2 | (160,160) |
@@ -67,6 +67,7 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
   <figcaption>Fig.2 - Open our Heroku app and Upload a Blood Smear image </figcaption>
 </figure>
 
+The entire Web application has been developed and deployed on Heroku. On visiting the webpage, you will we welcomed by a screen as follows. Now, when a Healthcare worker uses our app, they will click on the `Upload` button to upload a blood smear image. The first image might take ~2-3 seconds to process since the app needs to boot-up. Afterwards, each upload and processing of results takes <1s. 
 
 
 
@@ -74,20 +75,23 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
   <img src=./Deployed-model-screenshots/desktop-page-predict.png alt="Predict" width=500>
   <figcaption>Fig.3 - Click on Predict to get Results and the Probability </figcaption>
 </figure>
-
+ 
+On clicking the `Predict` Button, the Image is sent to the Model. The Model Preprocesses the image and generates the outcome in the form of probability scores. These Probability scores and the likelihood of being uninfected is reported. 
 
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
   <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image </figcaption>
 </figure>
-
+The result for an Image that has been Identified as Uninfected. //
 
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-infected.png alt="Infected" width=500>
   <figcaption>Fig.5 - Results for a Parasitized ir infected Blood Smear Image</figcaption>
 </figure>
+
+The result for an Image that has been Identified as Uninfected
 
 ### Run the App on your Mobile phone ! 
 
