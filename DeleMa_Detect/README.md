@@ -1,11 +1,14 @@
 # DeLeMa Detect Documentation
 
-DeleMa Detect is a Web application built on a lightweight python backend that is able to classify *Plasmodium flaciparum* infected blood smear images. The classification has be documented to be about $~ 96%$ accurate with a 0.96 $F_1$ score . Results for a blood smear image can be obtained within seconds whereas a traditional approach of testing in laboratory with the requirement of technicians would require atleast a day for accurate results. To classify each image, a Deep Learning convolutional neural network  based Mobilenet_v2 architecture was trained on a set of 27,558 images using open-source software Python, Tensorflow and Keras. The final Web app has been deployed on [Heroku](https://2020.igem.org/Team:IISER-Pune-India/Software) for testing and viewing. This repository contains all the files used to build, test and deploy the model. 
+DeleMa Detect is a Web application built on a lightweight python backend that is able to classify *Plasmodium falciparum* infected blood smear images. The classification has be documented to be about ~ 96% accurate with a 0.96  F1 score . Results for a blood smear image can be obtained within seconds whereas a traditional approach of testing in laboratory with the requirement of technicians would require atleast a day for accurate results. To classify each image, a Deep Learning convolutional neural network  based Mobilenet_v2 architecture was trained on a set of 27,558 images using open-source software Python, Tensorflow and Keras. The final Web app has been deployed on [Heroku](https://delema-detect-igem-iiserpune.herokuapp.com/) for testing and viewing. This repository contains all the files used to build, test and deploy the model. 
+You can find more information on how the software was built on our [Software](https://2020.igem.org/Team:IISER-Pune-India/Software) page. 
 
 ## Overview 
 
-![Overview of DeleMa Detect ](./Deployed-model-screenshots/delema_detect_summary.png)
-
+ <figure>
+  <img src=./Deployed-model-screenshots/delema_detect_summary.png alt="Trulli" width=600>
+  <figcaption>Fig.1 - Overview of how DeLeMa Detect was built</figcaption>
+</figure> 
 
 ### ``` app.py ```
 
@@ -13,7 +16,7 @@ The main python script that uses the FLASK micro web framework to create a local
 
 1. ```model_predict``` calls the model.h5 file stored in ```./model```. We can created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded and needs to placed in ```./model``` 
 
-Although, the dimensions of the image uploaded can be anything, each model takes a particular input image size, namely : 
+Although, the dimensions of the uploaded image can be anything, each model takes a particular input image size which is controlled and preprocessed in ```app.py```, namely : 
 | Sr no | Model | ```target_size``` | 
 | ----- | ----- | ----------------- | 
 | 1 | MobileNet_v2 | (160,160) |
@@ -57,41 +60,92 @@ This file contains all the required python (>3.2) modules required for locally r
 
 ## Use the Web App ! 
 
-Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the video on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) otherwise !
+Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the tutorial video and get some testing blood smear images on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software)! 
 
-![Homepage](./Deployed-model-screenshots/desktop-page.png)
-
-
-![Upload an Image and Click Predict](./Deployed-model-screenshots/desktop-page-predict.png)
-
-![Result for a Clean/Uninfected Image](./Deployed-model-screenshots/desktop-page-result-clean.png)
-
-
-![Result for a Parasitized/Infected Image](./Deployed-model-screenshots/desktop-page-result-infected.png)
+ <figure>
+  <img src=./Deployed-model-screenshots/desktop-page.png alt="Upload" width=500>
+  <figcaption>Fig.2 - Open our Heroku app and Upload a Blood Smear image </figcaption>
+</figure>
+<br><br>
+The entire Web application has been developed and deployed on Heroku. On visiting the webpage, you will we welcomed by a screen as follows. Now, when a Healthcare worker uses our app, they will click on the `Upload` button to upload a blood smear image. The first image might take ~2-3 seconds to process since the app needs to boot-up. Afterwards, each upload and processing of results takes <1s. 
+<br><br>
 
 
+
+ <figure>
+  <img src=./Deployed-model-screenshots/desktop-page-predict.png alt="Predict" width=500>
+  <figcaption>Fig.3 - Click on Predict to get Results and the Probability </figcaption>
+</figure>
+ <br><br>
+On clicking the `Predict` Button, the Image is sent to the Model. The Model Preprocesses the image and generates the outcome in the form of probability scores. These Probability scores and the likelihood of being uninfected is reported. 
+<br><br>
+
+
+<figure>
+  <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
+  <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image </figcaption>
+</figure>
+<br><br>
+The result for an Image that has been Identified as Uninfected. 
+<br><br>
+
+
+
+<figure>
+  <img src=./Deployed-model-screenshots/desktop-page-result-infected.png alt="Infected" width=500>
+  <figcaption>Fig.5 - Results for a Parasitized ir infected Blood Smear Image</figcaption>
+</figure>
+<br><br>
+
+The result for an Image that has been Identified as Uninfected
+<br><br>
 ### Run the App on your Mobile phone ! 
 
-![Upload a blood smear image and click predict !](./Deployed-model-screenshots/mobile-page-predict.png )
 
-![Result for a Clean/Uninfected Image](./Deployed-model-screenshots/mobile-page-result-clean.png)
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-predict.png alt="Infected" width=120>
+  <figcaption>Fig.6 - Upload </figcaption>
+</figure>
 
-![Result for a Parasitized/Infected Image](./Deployed-model-screenshots/mobile-page-result-infected.png)
+<br><br>
+
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
+  <figcaption>Fig.7 - Prediction for an infected image</figcaption>
+</figure>
+
+<br><br>
+
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
+  <figcaption>Fig.8 - Prediction for a Clean Image</figcaption>
+</figure>
 
 ## How to run DeLeMa Detect locally ? 
 
-1. Download this Github repository using ```git clone https://github.com/igemsoftware2020/IISER-Pune-India```
+1. Clone this Github repository using 
+```git clone https://github.com/igemsoftware2020/IISER-Pune-India```
 
-2. Create a Python (>=3.2) virtual environemnt. 
+2. Create a Python (>=3.2) virtual environemnt and call it 'delema_detect'.
 
-3. In the new virtual environemnt , run ```pip3 install -r requirements.txt```
+```python3 -m venv delema_detect```
 
-4. Download a desired model form the [Google Drive link](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing) provided and store it in ```./model```. Based on the model, setup the variable ```target_size``` in ```app.py```
+- A new directory called `delema_detect` will be created. 
+- Activate the Virtual Environment by running the following : 
+
+```source delema_detect/bin/activate```
+
+3. In the new virtual environemnt , run ```pip3 install -r requirements.txt``` to install all dependencies
+
+4. Download a desired model (VGG16 , Mobilenet_V2 etc) form the [Google Drive link](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing) provided and store it in ```./model```. Based on the model, setup the variable ```target_size``` in ```app.py```
 
 5. Run ```python3 app.py``` in the command line and the web app must be running on localhost:5000 by default. Any errors or bugs will show up on executing app.py
 
+(We have found that this tutorial works without any bugs for Mac and Linux but we found few bugs while running the same on windows. We suggest you watch [this tutorial video](https://www.youtube.com/watch?v=APOPm01BVrk) on creating a virtual environment in Windows.)
+
 We have also uploaded a sample video of us running the code on our Github Repository. It is available at ```./Deployed-model-screenshots/delema-demo.mp4```. Tutorial video for the mobile version is also available at ```./Deployed-model-screenshots/delema-demo-mobile.mp4```
 
-## References
 
-1. Rajaraman, S., Antani, S. K., Poostchi, M., Silamut, K., Hossain, M. A., Maude, R. J., Jaeger, S., & Thoma, G. R. (2018b). Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images. PeerJ, 6, e4568. https://doi.org/10.7717/peerj.4568
+<br><br>
+<br><br>
+For clarifications and queries -- [iGEM-IISER-Pune](mailto:igem@sac.iiserpune.ac.in?subject=[igem20_github])@2020
