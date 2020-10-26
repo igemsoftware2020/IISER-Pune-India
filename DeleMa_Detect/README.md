@@ -59,31 +59,52 @@ This file contains all the required python (>3.2) modules required for locally r
 
 ## Use the Web App ! 
 
-Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the video on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) otherwise !
+Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the tutorial video and get some testing blood smear images on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) ! 
 
-<img src=./Deployed-model-screenshots/desktop-page.png width="500">
-
-
-
-<img src=./Deployed-model-screenshots/desktop-page-predict.png width="500">
-
-
-
-<img src=./Deployed-model-screenshots/desktop-page-result-clean.png width="120">
+ <figure>
+  <img src=./Deployed-model-screenshots/desktop-page.png alt="Upload" width=500>
+  <figcaption>Fig.2 - Open our Heroku app and Upload a Blood Smear image </figcaption>
+</figure>
 
 
 
-<img src=./Deployed-model-screenshots/desktop-page-result-infected.png width="120">
 
+ <figure>
+  <img src=./Deployed-model-screenshots/desktop-page-predict.png alt="Predict" width=500>
+  <figcaption>Fig.3 - Click on Predict to get Results and the Probability </figcaption>
+</figure>
+
+
+
+<figure>
+  <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
+  <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image</figcaption>
+</figure>
+
+
+
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=500>
+  <figcaption>Fig.5 - Results for a Parasitized ir infected Blood Smear Image</figcaption>
+</figure>
 
 ### Run the App on your Mobile phone ! 
 
 
-<img src=./Deployed-model-screenshots/mobile-page-predict.png width="120">
+<figure>
+  <img src=/Deployed-model-screenshots/mobile-page-predict.png alt="Infected" width=120>
+  <figcaption>Fig.6 - Upload</figcaption>
+</figure>
 
-<img src=./Deployed-model-screenshots/mobile-page-result-clean.png width="120">
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
+  <figcaption>Fig.7 - Prediction for an infected image</figcaption>
+</figure>
 
-<img src=./Deployed-model-screenshots/mobile-page-result-infected.png width="120">
+<figure>
+  <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
+  <figcaption>Fig.8 - Prediction for a Clean Image</figcaption>
+</figure>
 
 ## How to run DeLeMa Detect locally ? 
 
