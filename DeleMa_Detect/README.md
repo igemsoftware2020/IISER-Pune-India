@@ -4,9 +4,7 @@ DeleMa Detect is a Web application built on a lightweight python backend that is
 
 ## Overview 
 
-![Overview of DeleMa Detect ](./Deployed-model-screenshots/delema_detect_summary.png)
-
-<img src=./Deployed-model-screenshots/delema_detect_summary.png width="48">
+<img src=./Deployed-model-screenshots/delema_detect_summary.png width="120">
 
 ### ``` app.py ```
 
@@ -60,24 +58,29 @@ This file contains all the required python (>3.2) modules required for locally r
 
 Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the video on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) otherwise !
 
-![Homepage](./Deployed-model-screenshots/desktop-page.png =100x20)
+<img src=../Deployed-model-screenshots/desktop-page.png width="120">
 
 
-![Upload an Image and Click Predict](./Deployed-model-screenshots/desktop-page-predict.png)
 
-![Result for a Clean/Uninfected Image](./Deployed-model-screenshots/desktop-page-result-clean.png)
+<img src=./Deployed-model-screenshots/desktop-page-predict.png width="120">
 
 
-![Result for a Parasitized/Infected Image](./Deployed-model-screenshots/desktop-page-result-infected.png)
+
+<img src=./Deployed-model-screenshots/desktop-page-result-clean.png width="120">
+
+
+
+<img src=./Deployed-model-screenshots/desktop-page-result-infected.png width="120">
 
 
 ### Run the App on your Mobile phone ! 
 
-![Upload a blood smear image and click predict !](./Deployed-model-screenshots/mobile-page-predict.png )
 
-![Result for a Clean/Uninfected Image](./Deployed-model-screenshots/mobile-page-result-clean.png)
+<img src=../Deployed-model-screenshots/mobile-page-predict.png width="120">
 
-![Result for a Parasitized/Infected Image](./Deployed-model-screenshots/mobile-page-result-infected.png)
+<img src=./Deployed-model-screenshots/mobile-page-result-clean.png width="120">
+
+<img src=./Deployed-model-screenshots/mobile-page-result-infected.png width="120">
 
 ## How to run DeLeMa Detect locally ? 
 
