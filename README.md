@@ -31,7 +31,7 @@ We designed peptide inhibitors against essential *falciparum* membrane proteins 
   
 3. Molecular Dynamics Simulations
 
-  Under ``` ./2_MD_simulation_and_analysis ```, we have presented the scripts used to perform MD runs and and analyse the huge amounts of MD data ( $~$ 5-10 GB) for each inhibitor model using GROMACS 2019.1 on the Parambrahma Supercomputer. Our objective was to understand the behavior of the inhibitor over time, and determine the specific regions or atoms of the motif that are responsible for the binding. 
+  Under ``` ./2_MD_simulation_and_analysis ```, we have presented the scripts used to perform MD runs and and analyse the huge amounts of MD data ( ~ 5-10 GB) for each inhibitor model using GROMACS 2019.1 on the Parambrahma facility under the National supercomputing mission, Govt of India located at IISER Pune. Our objective was to understand the behavior of the inhibitor over time, and determine the specific regions or atoms of the motif that are responsible for the binding. 
 
 4. Circularising a Peptide in Cyclotides
 

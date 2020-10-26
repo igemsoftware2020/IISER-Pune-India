@@ -105,7 +105,11 @@ The python script contains a host of preprocessing functions that read data from
 
 ``` cyclic.py``` performs Homology modeling and joins the N- and C- terminus of our peptide and circularises them. 
 
+``` MD_gromacs_commands.txt ``` contains all the commands that we used to perform our Molecular Dynamics Simulations. 
 
+---
+
+We would like to thank IISER Pune and all our sponsors for funding and heliping us in our project.
 
 
 <br><br>
