@@ -5,17 +5,18 @@
 
 # Analysis of Molecular Dynamics simulations
 
-To analyse the MD simulaions of a Protein and its peptide inhibitor, we wanted to understand two particular aspects in greater detail: 
-## How does the distance between the centroids of the Protein and peptide evolve over time ? 
+To analyze the MD simulations of a Protein and its peptide inhibitor, we wanted to understand two particular aspects in greater detail: 
+
+## How does the distance between the centroid of the Protein and peptide evolve over time ? 
   1. If it increasing, it means that over-time the peptide flies away from the protein and is not binding effectively.
   2. If the distance between the centroid of the two entities remains constant, then over the duration of the simulation, the peptide binds strongly to the protein and can act as a good inhibitor. 
   3. If the distance decreases, then the peptide moves closer to the Protein core. (However, this is assumed to be unlikely) 
   
-To perform these calculations, I wrote the script PDB_centroid_analyser. 
+To perform these calculations, I wrote the script ```PDB_centroid_analyser``` 
  
-### What does PDB_centroid_analyser do ?
+### What does ```PDB_centroid_analyser``` do ?
 
-```PDB_centroid_analyser.py``` basically reads through a .pdb file and captures all lines containing "ATOM .... \<element name\>". This is performed using Python regular expressions. The railroad diagram of the regex code is as follows: 
+```PDB_centroid_analyser.py``` reads through a .pdb file and captures all lines containing "ATOM .... \<element name\>". This is performed using Python **regular expressions** that is applicable for any file in .pdb format. The railroad diagram of the regex code is as follows: 
   
 Regex Railroad diagram : 
 
@@ -29,11 +30,11 @@ Here :
  - Z co-ordinates --> group(11)+group(12)
  - Atom -->  group(14)
 
-After reading these lines, the function get_centroid() obtains the centroid (x,y,z) of a given chain. We perform calculations in numpy arrays using the standard centroid formula: 
+After reading these lines, the function ```get_centroid()``` obtains the centroid (x,y,z) of a given chain. We perform calculations in numpy arrays using the standard centroid formula: 
 
    **Centroid = sum( w[i] * r[i] ) / sum(w[i])** 
   
-A wrapper function, **main()** calls other multiple functions to determine the distance between the centroid of two chains using euclidean_distance(). This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official presribed format, otherwise the regex syntax will not be able to identify the chain, atom or element. Finally the script writes a .csv file in the same directory which includes the following fields:
+A wrapper function, ```main()``` calls other multiple functions to determine the distance between the centroid of two chains using euclidean_distance(). This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official presribed format, otherwise the regex syntax will not be able to identify the chain, atom or element. Finally the script writes a .csv file in the same directory which includes the following fields:
 
 1. File name 
 2. Centroid of Chain1 "{chain-name given}"
@@ -46,6 +47,10 @@ The script can be run on the command line/terminal and also imported into other 
 1. A text file containing all .pdb names 
 2. The output .csv filename.
 
+Sample code to be run on CLI : 
+
+``` PDB_centroid_analyser.py pdbnames.txt output_centroid_data.csv```
+
 The other functions included in PDB_centroid_analyser are : 
 1. get_centorid() --> returns the centroid of a particular chain from a .pdb file
 2. euclidean_distance() --> returns the distance between two vectors
@@ -56,7 +61,7 @@ The other functions included in PDB_centroid_analyser are :
 
 To understand effective binding, we analyse the number of intermolecular Hydrogen bonds between the Protein and the peptide. This entails the analysis of hbonds over each snapshot of the MD simulation to determine which residues and specifically which atom in these residues of the peptide inhibitor form hydrogen bonds with the protein. We also aim to determine the relative abundance of Hydrogen bonds formed over the entire simulation period. 
 
-To perform these calculations, I wrote a script that functions on top of [Chimera](https://www.cgl.ucsf.edu/chimera/).  
+To perform these calculations, I wrote a script that functions on build over [UCSF Chimera](https://www.cgl.ucsf.edu/chimera/).  
 
 
 ### Computing the Hydrogen Bond Profile
@@ -90,3 +95,20 @@ The script takes two arguments :
 
 ##### Working 
 The python script contains a host of preprocessing functions that read data from the output files of ```Hbond-analyzer.sh``` ie files ending with ```hbond_info.txt```. The script processes each line in the .txt file using grep expressions and returns a dataframe containing information on the Hydrogen bonds (Donor atom, Acceptor atom, Donor-Hydrogen, Distance D-A, Distance D-H-A, No of Hydrogen bonds). This is used for further Data Analysis and Interpretation
+
+
+
+# Cyclization of a peptide grafted in Cyclotide
+
+ ``` ./align2d.py```  aligns our peptide sequence (Inhibitory peptide grafted in loop 6 of Cyclotide kalata B1 ) against our template PDB ID : [4TTN](https://www.rcsb.org/structure/4ttm)
+
+
+``` cyclic.py``` performs Homology modeling and joins the N- and C- terminus of our peptide and circularises them. 
+
+
+
+
+<br><br>
+<br><br>
+For clarifications and queries -- [iGEM-IISER-Pune](mailto:igem@sac.iiserpune.ac.in?subject=[igem20_github])@2020
+
