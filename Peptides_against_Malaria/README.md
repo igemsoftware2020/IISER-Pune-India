@@ -38,8 +38,8 @@ Here :
  - Atom -->  group(14)
 
 After reading these lines, the function ```get_centroid()``` obtains the centroid (x,y,z) of a given chain. We perform calculations in numpy arrays using the standard centroid formula: 
-
-   $$Centroid = \frac{\sum (w[i] * r[i])}{ \sum (w[i])} $$ 
+   
+   <img src="https://render.githubusercontent.com/render/math?math=Centroid = \frac{\sum (w[i] * r[i])}{ \sum (w[i])}">
   
 A wrapper function, ```main()``` calls other multiple functions to determine the distance between the centroid of two chains using euclidean_distance(). This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official presribed format, otherwise the regex syntax will not be able to identify the chain, atom or element. Finally the script writes a .csv file in the same directory which includes the following fields:
 
