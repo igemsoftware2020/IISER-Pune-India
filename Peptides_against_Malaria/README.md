@@ -22,10 +22,8 @@ To perform these calculations, I wrote the script ```PDB_centroid_analyser```
 ```PDB_centroid_analyser.py``` reads through a .pdb file and captures all lines containing "ATOM .... \<element name\>". This is performed using Python **regular expressions** that is applicable for any file in .pdb format. The railroad diagram of the regex code is as follows: 
  
 
-![Regex Diagram](./2_MD_simulations_and_analysis/regex.svg)
-
  <figure>
-  <img src=./2_MD_simulations_and_analysis/regex.svg alt="dry_lab_overview" width=500>
+  <img src=./2_MD_simulations_and_analysis/regex.svg alt="dry_lab_overview" style="width:100%">
   <figcaption>Fig.2 - Regex Railroad diagram for identifying ATOMS in a .pdb file </figcaption>
 </figure>
 
