@@ -1,10 +1,10 @@
 # DeLeMa Detect Documentation
 
-DeleMa Detect is a Web application built on a lightweight python backend that is able to classify *Plasmodium flaciparum* infected blood smear images. The classification has be documented to be about ~ 96% accurate with a 0.96 $F_1$ score . Results for a blood smear image can be obtained within seconds whereas a traditional approach of testing in laboratory with the requirement of technicians would require atleast a day for accurate results. To classify each image, a Deep Learning convolutional neural network  based Mobilenet_v2 architecture was trained on a set of 27,558 images using open-source software Python, Tensorflow and Keras. The final Web app has been deployed on [Heroku](https://2020.igem.org/Team:IISER-Pune-India/Software) for testing and viewing. This repository contains all the files used to build, test and deploy the model. 
+DeleMa Detect is a Web application built on a lightweight python backend that is able to classify *Plasmodium flaciparum* infected blood smear images. The classification has be documented to be about ~ 96% accurate with a 0.96 $ F_1 $ score . Results for a blood smear image can be obtained within seconds whereas a traditional approach of testing in laboratory with the requirement of technicians would require atleast a day for accurate results. To classify each image, a Deep Learning convolutional neural network  based Mobilenet_v2 architecture was trained on a set of 27,558 images using open-source software Python, Tensorflow and Keras. The final Web app has been deployed on [Heroku](https://2020.igem.org/Team:IISER-Pune-India/Software) for testing and viewing. This repository contains all the files used to build, test and deploy the model. 
 
 ## Overview 
 
-<img src=./Deployed-model-screenshots/delema_detect_summary.png width="400">
+<img src=./Deployed-model-screenshots/delema_detect_summary.png width="600" alt="Overview of how DeLeMa Detect was built">
 
 ### ``` app.py ```
 
@@ -58,11 +58,11 @@ This file contains all the required python (>3.2) modules required for locally r
 
 Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-detect-igem-iiserpune.herokuapp.com/). Watch the video on our [Software page](https://2020.igem.org/Team:IISER-Pune-India/Software) otherwise !
 
-<img src=../Deployed-model-screenshots/desktop-page.png width="120">
+<img src=./Deployed-model-screenshots/desktop-page.png width="500">
 
 
 
-<img src=./Deployed-model-screenshots/desktop-page-predict.png width="120">
+<img src=./Deployed-model-screenshots/desktop-page-predict.png width="500">
 
 
 
@@ -76,7 +76,7 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
 ### Run the App on your Mobile phone ! 
 
 
-<img src=../Deployed-model-screenshots/mobile-page-predict.png width="120">
+<img src=./Deployed-model-screenshots/mobile-page-predict.png width="120">
 
 <img src=./Deployed-model-screenshots/mobile-page-result-clean.png width="120">
 
