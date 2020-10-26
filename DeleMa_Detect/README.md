@@ -66,8 +66,9 @@ Open the Heroku web app hosted at [Delema-detect-igem-iiserpune](https://delema-
   <img src=./Deployed-model-screenshots/desktop-page.png alt="Upload" width=500>
   <figcaption>Fig.2 - Open our Heroku app and Upload a Blood Smear image </figcaption>
 </figure>
-
+<br><br>
 The entire Web application has been developed and deployed on Heroku. On visiting the webpage, you will we welcomed by a screen as follows. Now, when a Healthcare worker uses our app, they will click on the `Upload` button to upload a blood smear image. The first image might take ~2-3 seconds to process since the app needs to boot-up. Afterwards, each upload and processing of results takes <1s. 
+<br><br>
 
 
 
@@ -77,19 +78,23 @@ The entire Web application has been developed and deployed on Heroku. On visitin
 </figure>
  
 On clicking the `Predict` Button, the Image is sent to the Model. The Model Preprocesses the image and generates the outcome in the form of probability scores. These Probability scores and the likelihood of being uninfected is reported. 
+<br><br>
 
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
   <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image </figcaption>
 </figure>
-The result for an Image that has been Identified as Uninfected. //
+The result for an Image that has been Identified as Uninfected. 
+<br><br>
+
 
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-infected.png alt="Infected" width=500>
   <figcaption>Fig.5 - Results for a Parasitized ir infected Blood Smear Image</figcaption>
 </figure>
+<br><br>
 
 The result for an Image that has been Identified as Uninfected
 
@@ -101,10 +106,14 @@ The result for an Image that has been Identified as Uninfected
   <figcaption>Fig.6 - Upload </figcaption>
 </figure>
 
+<br><br>
+
 <figure>
   <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
   <figcaption>Fig.7 - Prediction for an infected image</figcaption>
 </figure>
+
+<br><br>
 
 <figure>
   <img src=./Deployed-model-screenshots/mobile-page-result-infected.png alt="Infected" width=120>
