@@ -76,7 +76,7 @@ The entire Web application has been developed and deployed on Heroku. On visitin
   <img src=./Deployed-model-screenshots/desktop-page-predict.png alt="Predict" width=500>
   <figcaption>Fig.3 - Click on Predict to get Results and the Probability </figcaption>
 </figure>
- 
+ <br><br>
 On clicking the `Predict` Button, the Image is sent to the Model. The Model Preprocesses the image and generates the outcome in the form of probability scores. These Probability scores and the likelihood of being uninfected is reported. 
 <br><br>
 
@@ -85,6 +85,7 @@ On clicking the `Predict` Button, the Image is sent to the Model. The Model Prep
   <img src=./Deployed-model-screenshots/desktop-page-result-clean.png alt="Clean" width=500>
   <figcaption>Fig.4 - Results for a Clean or Uninfected Blood Smear Image </figcaption>
 </figure>
+<br><br>
 The result for an Image that has been Identified as Uninfected. 
 <br><br>
 
@@ -97,7 +98,7 @@ The result for an Image that has been Identified as Uninfected.
 <br><br>
 
 The result for an Image that has been Identified as Uninfected
-
+<br><br>
 ### Run the App on your Mobile phone ! 
 
 
@@ -134,6 +135,7 @@ The result for an Image that has been Identified as Uninfected
 
 We have also uploaded a sample video of us running the code on our Github Repository. It is available at ```./Deployed-model-screenshots/delema-demo.mp4```. Tutorial video for the mobile version is also available at ```./Deployed-model-screenshots/delema-demo-mobile.mp4```
 
-## References
 
-1. Rajaraman, S., Antani, S. K., Poostchi, M., Silamut, K., Hossain, M. A., Maude, R. J., Jaeger, S., & Thoma, G. R. (2018b). Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images. PeerJ, 6, e4568. https://doi.org/10.7717/peerj.4568
+<br><br>
+<br><br>
+For clarifications and queries -- [iGEM-IISER-Pune](mailto:igem@sac.iiserpune.ac.in?subject=[igem20_github])@2020
