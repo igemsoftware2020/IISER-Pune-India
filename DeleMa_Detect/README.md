@@ -5,7 +5,7 @@ DeleMa Detect is a Web application built on a lightweight python backend that is
 ## Overview 
 
  <figure>
-  <img src=./Deployed-model-screenshots/delema_detect_summary.png alt="Trulli" style="width:600">
+  <img src=./Deployed-model-screenshots/delema_detect_summary.png alt="Trulli" style="width:500">
   <figcaption>Fig.1 - Overview of how DeLeMa Detect was built</figcaption>
 </figure> 
 
