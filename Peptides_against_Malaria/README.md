@@ -1,6 +1,9 @@
 # Overview
 
-![](./dry_lab_overview.png)
+ <figure>
+  <img src=./dry_lab_overview.png alt="dry_lab_overview" width=500>
+  <figcaption>Fig.1 - Overview of Modeling work for designing peptide Inhibitors </figcaption>
+</figure>
 
 
 # Analysis of Molecular Dynamics simulations
@@ -17,10 +20,12 @@ To perform these calculations, I wrote the script ```PDB_centroid_analyser```
 ### What does ```PDB_centroid_analyser``` do ?
 
 ```PDB_centroid_analyser.py``` reads through a .pdb file and captures all lines containing "ATOM .... \<element name\>". This is performed using Python **regular expressions** that is applicable for any file in .pdb format. The railroad diagram of the regex code is as follows: 
-  
-Regex Railroad diagram : 
+ 
 
-![Regex Diagram](./2_MD_simulations_and_analysis/regex.svg)
+ <figure>
+  <img src=./2_MD_simulations_and_analysis/regex.svg alt="dry_lab_overview" style="width:100%">
+  <figcaption>Fig.2 - Regex Railroad diagram for identifying ATOMS in a .pdb file </figcaption>
+</figure>
 
 Here : 
  - Atom no -->  group(1)
@@ -31,8 +36,8 @@ Here :
  - Atom -->  group(14)
 
 After reading these lines, the function ```get_centroid()``` obtains the centroid (x,y,z) of a given chain. We perform calculations in numpy arrays using the standard centroid formula: 
-
-   **Centroid = sum( w[i] * r[i] ) / sum(w[i])** 
+   
+   <img src="https://render.githubusercontent.com/render/math?math=Centroid (G) = \frac{\sum_i (w_i * r_i)}{ \sum_i w_i}">
   
 A wrapper function, ```main()``` calls other multiple functions to determine the distance between the centroid of two chains using euclidean_distance(). This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official presribed format, otherwise the regex syntax will not be able to identify the chain, atom or element. Finally the script writes a .csv file in the same directory which includes the following fields:
 
