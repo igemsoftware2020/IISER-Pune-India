@@ -1,6 +1,6 @@
 - [DeleMa Detect Documentation](#delema-detect-documentation)
   - [Overview](#overview)
-    - [``` app.py ```](#-apppy-)
+    - [```app.py```](#apppy)
     - [```DataVisualization```](#datavisualization)
     - [```Models_notebooks```](#models_notebooks)
     - [```Procfile```](#procfile)
@@ -14,7 +14,7 @@
 
 # DeleMa Detect Documentation
 
-<img src="https://2020.igem.org/wiki/images/e/e9/T--IISER-Pune-India--delema-demo-desktop-small.gif" alt="DeleMa Detect Demo" width="70%" style="display:block;margin:auto;">
+<img src="https://2020.igem.org/wiki/images/e/e9/T--IISER-Pune-India--delema-demo-desktop-small.gif" alt="DeleMa Detect Demo" width="90%" style="display:block;margin:auto;">
 
 <br>
 
@@ -26,15 +26,15 @@ You can find more information on how the software was built on our [Software](ht
 ## Overview 
 
  <figure>
-  <img src=./Deployed-model-screenshots/delema_detect_summary.png alt="Trulli" width=600>
+  <img src=./Deployed-model-screenshots/delema_detect_summary.png width=600>
   <figcaption>Fig.1 - Overview of how DeLeMa Detect was built</figcaption>
 </figure> 
 
-### ``` app.py ```
+### ```app.py```
 
 The main python script uses the Flask micro web framework to create a local host where the model is deployed. It contains auxiliary functions ```model_predict()```, ```index()``` and ```upload()```
 
-1. ```model_predict``` calls the `model.h5` file stored in ```./model/```. We created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google Drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded placed in ```./model/``` 
+1. ```model_predict``` calls the `model.h5` file stored in ```./model/```. We created many models and tested each one's accuracy, size and processing power. Since the size of a few models were greater than 50MB (a soft limit setup by Github) we have uploaded them on [Google Drive](https://drive.google.com/drive/folders/11ULc4FWlB3VScfZIR4y3o8KJgljHZPFe?usp=sharing). Based on the model one wants, it can be downloaded and placed in ```./model/``` 
 
 Although the dimensions of the uploaded image can be anything, each model takes a particular input image size which is controlled and preprocessed in ```app.py```, namely : 
 | Sr no | Model | ```target_size``` | 
@@ -117,19 +117,11 @@ On clicking the `Predict` Button, the Image is sent to the Model. The Model Prep
 
 <br><br>
 
-The result for an Image that has been Identified as Uninfected. 
-
-<br><br>
-
-
 
 <figure>
   <img src=./Deployed-model-screenshots/desktop-page-result-infected.png alt="Infected" width="60%" style="display:block;margin:auto;">
-  <figcaption>Results for a Parasitized ir infected Blood Smear Image</figcaption>
+  <figcaption>Results for a Parasitized/Infected Blood Smear Image</figcaption>
 </figure>
-<br><br>
-
-The result for an Image that has been Identified as Uninfected
 <br><br>
 
 ### On Mobile
@@ -171,7 +163,7 @@ Activate the Virtual Environment by running the following.
 
 <br><br>
 
-# Sample BLood Smear Images
+## Sample Blood Smear Images
 
 We have added upto 20 blood smear images for testing purposes at ```./uploads/```. There are two directories called ```Parasitized``` and ```Uninfected```, each containing upto 10 images. These can be downloaded and tested by running the application locally or on our Heroku platform. 
 
