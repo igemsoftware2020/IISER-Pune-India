@@ -9,6 +9,7 @@
     - [On Desktop](#on-desktop)
     - [On Mobile](#on-mobile)
   - [Running DeleMa Detect Locally](#running-delema-detect-locally)
+  - [Sample Blood Smear Images](#sample-blood-smear-images)
   - [Contact Us](#contact-us)
 
 # DeleMa Detect Documentation
@@ -169,6 +170,10 @@ Activate the Virtual Environment by running the following.
 5. Do ```flask run``` or ```python3 app.py``` on the command line and the web app would start running on `localhost:5000` by default.
 
 <br><br>
+
+# Sample BLood Smear Images
+
+We have added upto 20 blood smear images for testing purposes at ```./uploads/```. There are two directories called ```Parasitized``` and ```Uninfected```, each containing upto 10 images. These can be downloaded and tested by running the application locally or on our Heroku platform. 
 
 ---
 
