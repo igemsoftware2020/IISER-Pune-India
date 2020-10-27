@@ -15,6 +15,15 @@ import pandas as pd
 
 def read_pdb_ids_csv(csv_path):
 
+    """ Read a comma separated file that is essentially one row and out put a list 
+
+    Args : 
+        csv_path (str) : The relative/full path to the .csv file
+
+    Returns : 
+        A List of all the values in the .csv file 
+    """
+
 	path = './pdb-ids.csv'   ### Path of csv file containing all pdb-ids downloaded from PDB-advanced-search-options
 	with open(path, 'r') as file:    ### reading the file with a context manager
 	    pdb_id_list = file.read().split(',')     ### create a list containing pdb-ids
@@ -26,6 +35,16 @@ def get_pdb_details(pdb_id):
 
     '''PDB_ID, Desc, Classification, Exp_system, Method, Lit, Pubmed_id, Pubmed_abs, Org1, Mmol, Org2, Mut, Res is the order of items needed'''
 
+    """
+    RCSB Web Parser that extracts the above stated information for a single ODB ID 
+
+    Args : 
+        pdb_id (str) : PDB ID of the molecule obtained from RCSB
+
+    Returns : 
+        A list containing all values scrapped from the Databse
+
+    """
     pdb_details = []
     url = 'https://www.rcsb.org/structure/'+pdb_id
 
@@ -128,12 +147,23 @@ def get_pdb_details(pdb_id):
 
 
 def main(csv_path, col_names):
+
+    """
+    Extract information for all PDB ID 
+
+    Args : 
+        csv_path (str) : Full/relative path to the csv_path containing the PDB IDS
+
+        col_names (list) : Name of the 13 columns that contain information on each aspect of the PDB file 
+
+    Returns : 
+        A Dataframe object from pandas where each row corresponds to a PDB ID and each column corresponds to a particular attribute of that PDB ID 
+    """
+
     pdb_ids_list = read_pdb_ids_csv(csv_path)        
     m = len(pdb_id)   ### length of pdb_id list ie no of pdb_ids
     
-    dataframe = []
-    for i in range(m):
-        dataframe.append(get_pdb_details(pdb_ids_list[i]))
+    dataframe = list(map(get_pdb_details, pdb_ids_list))
 
     dataframe = pd.DataFrame(dataframe, columns=col_names)
 
