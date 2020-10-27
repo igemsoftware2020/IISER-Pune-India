@@ -4,6 +4,19 @@ import sys
 import pandas as pd
 
 def get_centroid(pdb_file, chain_name):
+
+    """
+    Obtain the co-ordinates of the centroid of a given chain of a set of molecules in .pdb format
+
+    Args : 
+        pdb_file (str) : Full/relative path to the .pdb file 
+
+        chain_name (str) : Name of the chain whose Centroid co-ordinates are to be computed
+
+    Returns : 
+        A 3x1 array that are the x,y,z co-ordinates of the centroid (G)     
+
+    """
 	
     regexp = r'(ATOM\s+)(\S+)(\s+\S+\s*\w{3,4}\s)('+str(chain_name)+')(\s+\S+\s+)(-|\d)(\d{0,3}.\d{1,3})(\s+)(-|\d)(\d{0,3}.\d{1,3})(\s+)(-|\d)(\d{0,3}.\d{1,3})(\s+\S+\s+\S+\s+)([A-Z])'
             
@@ -45,6 +58,17 @@ def get_centroid(pdb_file, chain_name):
     
     
 def euclidean_distance(centroid1, centroid2):
+    """
+    Compute the Euclidean_distance between two Centroids 
+
+    Args : 
+        centroid1 : (3x1 numpy array ) 
+        centroid2 :  (3x1 numpy array ) 
+
+    Retuns :
+        A Real number (float) that is the Euclidean distance between two 3D vectors 
+
+    """
 	
 	distance_vector = centroid1-centroid2
 	distance = np.sqrt(np.sum(distance_vector**2))
@@ -53,6 +77,16 @@ def euclidean_distance(centroid1, centroid2):
 
 
 def pdb_names2list(pdb_files_textfile):
+
+    """
+    Convert a file that contains names in each line into an element of a list 
+
+    Args:
+        pdb_files_testfile (str) : Full / relative path to the text file 
+
+    Returns:
+        A List where the i^(th) element is the i^(th) line in the test file
+    """
     
     with open(pdb_files_textfile,'r') as rf:
         pdb_files = rf.read().split('\n')
@@ -63,6 +97,19 @@ def pdb_names2list(pdb_files_textfile):
 
 def pdb_list_centroid2df(pdb_files, output_file):
 
+    """
+    Compute the distance between two Chains for all pdb files and return a .csv file 
+
+    Args : 
+        pdb_files (str) : Path to the text file containing all .pdb files
+
+        output_fie (str) : Name of the putput .csv file that is saved in the same directory as this script 
+
+    Returns : 
+        A .csv file where each row represents a .pdb file with 4 Columns : ('Name','Centroid of Chain A','Centroid of Chain B','Euclidean Distance')
+
+
+    """
     listoflists = []
     for f in pdb_files:
         try :
@@ -82,6 +129,10 @@ def pdb_list_centroid2df(pdb_files, output_file):
 
 
 def main():
+
+    """ 
+    Main wrapper function
+    """
 
     print(' Processing \n')
     pdbfiles = pdb_names2list(sys.argv[1])
