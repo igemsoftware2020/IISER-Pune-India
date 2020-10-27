@@ -1,6 +1,6 @@
 - [Overview](#overview)
 - [Analysis of Molecular Dynamics Simulations](#analysis-of-molecular-dynamics-simulations)
-  - [How does the distance between the centroid of the Protein and peptide evolve over time?](#how-does-the-distance-between-the-centroid-of-the-protein-and-peptide-evolve-over-time)
+  - [How does the distance between the centroid of the protein and peptide evolve over time?](#how-does-the-distance-between-the-centroid-of-the-protein-and-peptide-evolve-over-time)
     - [```PDB_centroid_analyser```](#pdb_centroid_analyser)
   - [Hydrogen Bond Analysis](#hydrogen-bond-analysis)
     - [Computing the Hydrogen Bond Profile](#computing-the-hydrogen-bond-profile)
@@ -45,18 +45,18 @@ To perform these calculations, we wrote the script ```PDB_centroid_analyser```.
 </figure>
 
 Here : 
- - Atom no -->  group (1)
- - Chain name --> group (3)
- - X co-ordinates --> group (5) + group (6)
- - Y co-ordinates --> group (8) + group (9)
- - Z co-ordinates --> group (11) + group (12)
- - Atom -->  group(14)
+ - Atom no          --> group (1)
+ - Chain name       --> group (3)
+ - X co-ordinates   --> group (5)  + group (6)
+ - Y co-ordinates   --> group (8)  + group (9)
+ - Z co-ordinates   --> group (11) + group (12)
+ - Atom             --> group(14)
 
 After reading these lines, the function ```get_centroid()``` obtains the centroid (x, y, z) of a given chain. We perform calculations in numpy arrays using the standard centroid formula: 
    
    <img src="https://render.githubusercontent.com/render/math?math=\text{Centroid}\ (\rm G) = \dfrac{\sum_i (w_i \times r_i)}{ \sum_i w_i}">
   
-A wrapper function, ```main()``` calls other multiple functions to determine the distance between the centroid of two chains using `euclidean_distance()`. This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official prescribed format, otherwise, the regex syntax will not be able to identify the chain, atom or element. Finally, the script writes a .csv file in the same directory which includes the following fields:
+A wrapper function, ```main()``` calls other multiple functions to determine the distance between the centroid of two chains using `euclidean_distance()`. This is done for all the .pdb files submitted in the text file. *Special care* has to be taken to ensure that all .pdb files are in the official prescribed format; otherwise, the regex syntax will not be able to identify the chain, atom or element. Finally, the script writes a .csv file in the same directory which includes the following fields:
 
 1. Filename 
 2. Centroid of Chain1 "{chain-name given}"
@@ -65,13 +65,15 @@ A wrapper function, ```main()``` calls other multiple functions to determine the
 
 --> This .csv file serves as a good checkpoint for performing further analysis. 
 
-The script can be run on the command line/terminal and also imported into other scripts if particular functions seem interesting. The command-line version takes two arguments:
+The script can be run on the command line/terminal and also imported into other scripts if some particular function seems interesting. The command-line version takes two arguments:
 1. A text file containing all .pdb names 
 2. The output .csv filename.
 
 Sample code to be run on CLI : 
 
-``` PDB_centroid_analyser.py pdbnames.txt output_centroid_data.csv```
+```sh
+PDB_centroid_analyser.py pdbnames.txt output_centroid_data.csv
+```
 
 The other functions included in PDB_centroid_analyser are : 
 1. `get_centorid()` --> returns the centroid of a particular chain from a .pdb file
@@ -83,7 +85,7 @@ The other functions included in PDB_centroid_analyser are :
 
 To understand effective binding, we analyze the number of intermolecular Hydrogen bonds between the protein and the peptide. This entails the analysis of hbonds over each snapshot of the MD simulation to determine which residues and specifically which atom in these residues of the peptide inhibitor form hydrogen bonds with the protein. We also aim to determine the relative abundance of Hydrogen bonds formed over the entire simulation period. 
 
-To perform these calculations, I wrote a script that functions on build over [UCSF Chimera](https://www.cgl.ucsf.edu/chimera/).  
+To perform these calculations, we wrote a script that functions and builds over [UCSF Chimera](https://www.cgl.ucsf.edu/chimera/).  
 
 
 ### Computing the Hydrogen Bond Profile
@@ -100,13 +102,13 @@ The script takes two arguments :
 1. A text file containing .pdb files that are to be analyzed (must be in the same directory as the script and .pdb files)
 2. A .cmd file containing chimera commands
 
-**Note** : It is assumed that the chimera executable file is stored at ```~/chimera/bin/chimera```. If not the path to the executable has to be specified on Line 11. 
+**Note**: It is assumed that the chimera executable file is stored at ```~/chimera/bin/chimera```. If not the path to the executable has to be specified on Line 11. 
 
 The commands to be run in Chimera is submitted in a .cmd file, with each line containing the command based on chimera documentation. 
 
 ##### Working
 
-The script loops over each line of the text line (basically a file name), reads that particular file and processes it based on the instructions given in the .cmd file. After processing, the last 8 lines of the output (required information is stored here) is written to an external file. We then use the Linux stream editor ('sed') to replace the filename to be read next in the .cmd file, and a similar process continues until all files in the .txt file are processed.   
+The script loops over each line of the text file (basically a file name), reads that particular file and processes it based on the instructions given in the .cmd file. After processing, the last 8 lines of the output (required information is stored here) is written to an external file. We then use the Linux stream editor ('sed') to replace the filename to be read next in the .cmd file, and a similar process continues until all files in the .txt file are processed.   
 
 
 #### ```PDB_Hbond_analyser.py ```
@@ -116,7 +118,7 @@ The script takes two arguments :
 2. The name of the output .csv file where the output data is written 
 
 ##### Working 
-The python script contains a host of preprocessing functions that read data from the output files of ```Hbond-analyzer.sh, ```i.e. files ending with ```hbond_info.txt```. The script processes each line in the .txt file using grep expressions and returns a dataframe containing information on the Hydrogen bonds (Donor atom, Acceptor atom, Donor-Hydrogen, Distance D-A, Distance D-H-A, No of Hydrogen bonds). This is used for further Data Analysis and Interpretation.
+The python script contains a host of preprocessing functions that read data from the output files of ```Hbond-analyzer.sh```, i.e. files ending with ```hbond_info.txt```. The script processes each line in the .txt file using grep expressions and returns a dataframe containing information on the Hydrogen bonds (Donor atom, Acceptor atom, Donor-Hydrogen, Distance D-A, Distance D-H-A, No of Hydrogen bonds). This is used for further Data Analysis and Interpretation.
 
 <br>
 
