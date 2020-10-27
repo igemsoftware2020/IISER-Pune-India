@@ -1,8 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
 '''
 author : Anantha S Rao
 
@@ -11,10 +6,10 @@ date : Oct 12, 2020
 organization : iGEM IISER Pune
 
 '''
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import json
 
 
 
