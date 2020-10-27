@@ -8,6 +8,10 @@
     background-color: #333333;
 }
 
+.navbar-brand {
+    font-size: 4vmin;
+}
+
 .card {
     height: 600px;
     margin-bottom: 60px;
@@ -135,6 +139,9 @@ h3 span {
     height: 100%;
 }
 
+a {
+    white-space: nowrap;
+}
 
 /* Footer */
 
