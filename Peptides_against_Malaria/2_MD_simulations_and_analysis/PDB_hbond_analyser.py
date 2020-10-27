@@ -53,6 +53,9 @@ def processing_pdbs(pdbnames):  # create a dataframe and loop through all specif
     return e_list
 
 def main():
+    """ 
+    Main wrapper function 
+    """
 
     hbond_info_files = pdbnames(sys.argv[1])
     data = processing_pdbs(hbond_info_files)
