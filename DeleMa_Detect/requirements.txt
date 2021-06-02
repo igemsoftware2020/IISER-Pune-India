@@ -35,7 +35,7 @@ tensorboard-plugin-wit==1.7.0
 tensorflow==2.3.1
 tensorflow-estimator==2.3.0
 termcolor==1.1.0
-urllib3==1.25.10
+urllib3==1.26.5
 Werkzeug==1.0.1
 wrapt==1.12.1
 zope.event==4.5.0
@@ -78,7 +78,7 @@ tensorboard-plugin-wit==1.7.0
 tensorflow==2.3.1
 tensorflow-estimator==2.3.0
 termcolor==1.1.0
-urllib3==1.25.10
+urllib3==1.26.5
 Werkzeug==1.0.1
 wrapt==1.12.1
 zope.event==4.5.0
